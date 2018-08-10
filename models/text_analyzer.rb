@@ -1,23 +1,23 @@
 # Your TextAnalyzer model code will go here.
 class TextAnalyzer
-  attr_reader :text 
+  attr_reader :text
 
   def initialize(text)
     @text = text.downcase
-  end 
+  end
 
-  def count_of_words 
+  def count_of_words
     words = text.split(" ")
-    words.count 
-  end 
+    words.count
+  end
 
   def count_of_vowels
-    text.scan(/[aeiou]/).count 
-  end 
+    text.scan(/[aeiou]/).count
+  end
 
   def count_of_consonants
     text.scan(/[bcdfghjklmnpqrstvwxyz]/).count
-  end 
+  end
 
   def most_used_letter
     sl= text.gsub(/[^a-z]/,'')
@@ -26,16 +26,16 @@ class TextAnalyzer
     arr2 = {}
     arr1.map do |c|
       arr2[c] = arr.count[c]
-    end 
+    end
     biggest = { arr2.keys.first => arr2.values.first}
 
     arr2.each do |key, value|
-      if value > biggest.values.first 
+      if value > biggest.values.first
         biggest = {}
-        biggest[key] = value 
-      end 
-    end 
+        biggest[key] = value
+      end
+    end
     biggest 
-  end 
+  end
 
-end 
+end
