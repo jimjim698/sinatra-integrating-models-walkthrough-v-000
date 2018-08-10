@@ -28,14 +28,13 @@ class TextAnalyzer
       arr2[c] = arr.count[c]
     end
     biggest = { arr2.keys.first => arr2.values.first}
-
+binding.pry
     arr2.each do |key, value|
       if value > biggest.values.first
         biggest = {}
         biggest[key] = value
       end
     end
-    binding.pry
     biggest
   end
 
